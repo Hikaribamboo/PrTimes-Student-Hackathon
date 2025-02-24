@@ -3,10 +3,12 @@ import { v4 as uuidv4 } from 'uuid';
 
 function App() {
   const [task, setTask] = useState('');
-  const [tasks, setTasks] = useState<{ id: string; text: string }[]>([]);
+  const [tasks, setTasks] = useState<
+    { id: string; text: string; isEdit: boolean }[]
+  >([]);
 
   const addTask = () => {
-    const newTask = { id: uuidv4(), text: task };
+    const newTask = { id: uuidv4(), text: task, isEdit: false };
     setTasks([...tasks, newTask]);
     setTask('');
   };
