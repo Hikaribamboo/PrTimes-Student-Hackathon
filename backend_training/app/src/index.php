@@ -22,8 +22,9 @@ $routes = [
         '#^/todos/(\d+)$#' => 'handleUpdateTodo',
     ],
     'DELETE' => [
-        '#^/todos/(\d+)$#' => 'handleDeleteTodo',
-    ]
+    '#^/todos/(\d+)$#' => 'handleDeleteTodo',
+    ],
+
 ];
 
 // ルーティング処理
@@ -163,4 +164,3 @@ function handleHealthCheck(PDO $pdo): void
     }
     exit;
 }
-
